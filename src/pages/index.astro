@@ -1,0 +1,240 @@
+---
+import { Image } from "astro:assets";
+import imagenCarro from "/public/carroIluminado.jpg";
+import imagenMoto from "/public/motoPrincipal.jpg";
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="logo.jpg" type="image/png" />
+    <meta name="theme-color" content="#242424" />
+    <title>Detallado de vehiculos</title>
+  </head>
+  <body>
+    <header>
+      <h1>
+        Detallado de vehiculos
+        <span>"La cuadra"</span>
+      </h1>
+      <h2>¿Qué vehículo enchularas hoy?</h2>
+    </header>
+
+    <main>
+      <section class="vehiculos">
+        <article class="autos">
+          <a href="/autos" rel="noreferrer">
+            <Image src={imagenCarro} alt="Auto recien lavado y secado" />
+          </a>
+        </article>
+
+        <article class="motos">
+          <a href="/motos" rel="noreferrer">
+            <Image src={imagenMoto} alt="Moto recien lavada y secada" />
+          </a>
+        </article>
+      </section>
+
+      <h3>Selecciona una imagen</h3>
+    </main>
+
+    <footer>
+      <p>Estas imagenes fueron generadas con la IA de GEMINI</p>
+      <details>
+        <summary>Términos y condiciones</summary>
+        <ul>
+          <li>
+            La página web tiene como objetivo principal proporcionar información
+            sobre los servicios de detallado de vehículos ofrecidos por
+            Detallado de vehículos "LA CUADRA" (en adelante, "la empresa").
+          </li>
+          <li>
+            La información proporcionada en la página es solo con fines
+            informativos y no constituye una oferta vinculante de servicios.
+          </li>
+          <li>
+            La empresa se reserva el derecho de modificar o actualizar la
+            información contenida en la página en cualquier momento y sin previo
+            aviso.
+          </li>
+          <li>
+            Todos los contenidos de la página, incluyendo textos, imágenes,
+            logotipos, marcas y diseños, son propiedad exclusiva de la empresa o
+            de terceros que hayan autorizado su uso.
+          </li>
+          <li>
+            Queda prohibida la reproducción, distribución, modificación o
+            cualquier otro uso de los contenidos de la página sin la
+            autorización previa y por escrito de la empresa.
+          </li>
+          <li>
+            La empresa no se hace responsable por la exactitud, integridad o
+            actualidad de la información contenida en la página.
+          </li>
+          <li>Nunca se le solicitarán datos personales dentro de la página</li>
+          <li>
+            Cualquier fallo, reporte o duda, favor de enviarla al número de
+            contacto
+          </li>
+          <li>
+            La empresa no se hace responsable por los daños y perjuicios que
+            puedan derivarse del uso de la página o de la información contenida
+            en ella.
+          </li>
+          <li>
+            La empresa no se hace responsable por los contenidos de páginas web
+            de terceros enlazadas desde la página.
+          </li>
+          <li>
+            La página puede contener enlaces a páginas web de terceros. Estos
+            enlaces se proporcionan únicamente con fines informativos y no
+            implican ninguna asociación o respaldo por parte de la empresa.
+          </li>
+          <li>
+            La empresa no se hace responsable por los contenidos, productos o
+            servicios ofrecidos en páginas web de terceros.
+          </li>
+          <li>
+            La empresa se reserva el derecho de modificar estos términos en
+            cualquier momento y sin previo aviso. Le recomendamos revisar
+            periódicamente estos términos para estar al tanto de cualquier
+            cambio.
+          </li>
+          <li>Estos términos se rigen por las leyes de México.</li>
+          <li>
+            Cualquier controversia relacionada con estos términos se someterá a
+            la jurisdicción de los tribunales competentes de Santa Cruz
+            Huatulco, Oaxaca.
+          </li>
+          <li>Fecha de ultima actualziación: jueves 30 de enero del 2025</li>
+        </ul>
+      </details>
+    </footer>
+  </body>
+</html>
+
+<style>
+  body {
+    font-family:
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      "Open Sans",
+      "Helvetica Neue",
+      sans-serif;
+    background-color: #ebcca0;
+    color: #2e0609;
+  }
+
+  h1 {
+    text-transform: uppercase;
+  }
+
+  h1 span {
+    border-bottom: 3px solid #2e0609;
+  }
+
+  h2 {
+    margin-bottom: 40px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-align: center;
+  }
+
+  .vehiculos {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .vehiculos article {
+    width: 100%;
+  }
+
+  img {
+    display: block;
+    margin: auto;
+    width: 95%;
+    height: 300px;
+    object-fit: unset;
+    border-radius: 15px;
+    animation: terremoto 1s infinite alternate;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    font-weight: bolder;
+  }
+
+  footer details summary {
+	cursor: pointer;
+  }
+
+  footer details ul li {
+	margin-bottom: 10px;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    @keyframes terremoto {
+      0% {
+        rotate: 0deg;
+      }
+      50% {
+        rotate: -1deg;
+      }
+      100% {
+        rotate: 1deg;
+      }
+    }
+  }
+
+  @media (width >= 768px) {
+    .vehiculos article {
+      width: 500px;
+    }
+
+    img {
+      height: 350px;
+    }
+
+	footer details {
+		max-width: 70vw;
+	}
+
+	footer details ul li {
+		margin-bottom: 20px;
+	}
+  }
+
+  @media (width >= 800px) {
+    .vehiculos article {
+      width: initial;
+    }
+
+    img {
+      width: 600px;
+      height: 500px;
+      object-fit: cover;
+    }
+  }
+</style>
+
+<style is:global>
+  body {
+    overflow-x: hidden;
+  }
+</style>

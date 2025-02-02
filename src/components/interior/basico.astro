@@ -1,0 +1,72 @@
+---
+import Image from "astro/components/Image.astro";
+import lavadoInterior from "../../../public/lavadoInterior.png";
+---
+
+<section id="interiorBasico" class="limpiezaInterior">
+  <div class="malla"></div>
+  <h3>Lavado interior básico</h3>
+
+  <article>
+    <p>
+      Es un mantenimiento donde se busca realizar una limpieza completa sin
+      tanta agresividad. Ideal para autos que se les busca dar un mantenimiento continuo despues de un lavado profundo / completo.
+    </p>
+
+    <h4>Inlcuye:</h4>
+    <div>
+      <ul>
+        <li>Aspirado en toda la superficie</li>
+        <li>Limpieza de tablero</li>
+        <li>Limpieza de puertas</li>
+        <li>Limpieza de cristales</li>
+        <li>Limpieza de tapiceria</li>
+        <li>Limpieza de techo</li>
+        <li>Limpieza en asientos (tela / cuero)</li>
+      </ul>
+      <Image
+        src={lavadoInterior}
+        alt="Imagen de limpieza del interior del carro"
+      />
+    </div>
+  </article>
+</section>
+
+<style>
+  section {
+    background-image: url("/interiorCompleto.png");
+  }
+
+  @media (width >= 768px) {
+    article div ul {
+      padding: 0 0 0 10px;
+    }
+
+    article div img {
+      width: 45%;
+    }
+  }
+
+  @media (width >= 1185px) {
+    section {
+      width: 70%;
+    }
+
+    article p {
+      padding: 0 50px;
+    }
+
+    article div ul {
+      padding-left: 40px;
+    }
+
+    article div {
+      justify-content: space-between;
+    }
+
+    article div img {
+      width: 50%;
+      margin-top: -40px;
+    }
+  }
+</style>

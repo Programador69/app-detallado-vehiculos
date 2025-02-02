@@ -1,0 +1,146 @@
+---
+import Informacion from "../../components/carro/informacion.astro";
+import Autopista from "../../components/autopista.astro";
+import Servicios from "../../components/servicios.astro";
+import Pie from "../../components/pie.astro";
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo.jpg" type="image/jpg" >
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="theme-color" content="#242424"/>
+    <title>Detallado de Autos</title>
+</head>
+<body>
+    <nav class="itemsContacto">
+        <a href="tel:+529581242477" target="_blank" rel="noreferrer">
+                <i class='bx bxs-phone'></i>
+        </a>
+        <a href="https://wa.me/+529581242477" target="_blank" rel="noreferrer">
+            <i class='bx bxs-chat' ></i>
+        </a>
+    </nav>
+
+    <header>
+        <h1>Detallado de autos</h1>
+        <a href="/">Regresar a inicio</a>
+    </header>
+
+    <main>
+        <Informacion/>
+        <section class="paquetes">
+            <h3>Paquetes que incluimos:</h3>
+            <ul>
+                <li><a href="#interiorBasico">Lavado interior basico</a></li>
+                <li><a href="#interiorProfundo">Lavado interior profundo</a></li>
+                <li><a href="#interiorCompleto">Lavado interior completo</a></li>
+                <li> <a href="#interiorPersonalizado">Lavado interior personalizado</a> </li>
+            </ul>
+        </section>
+
+        <Autopista/>
+        <Servicios/>
+        <Pie/>
+    </main>
+</body>
+</html>
+
+<style>
+    body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        background-color: #ebcca0;
+		color: #2e0609;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .itemsContacto {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        position: sticky;
+        top: 10px;
+        z-index: 50; /**Chcear si se ve mejor sin esto o cone sto */
+    }
+
+    .itemsContacto i {
+        font-size: 2.5em;
+        margin: 0 20px;
+        color: #2e0609;
+    }
+
+    .itemsContacto a:hover {
+        text-shadow: 2px 2px #fff;
+    }
+
+    header h1 {
+        margin-top: 0;
+        margin-bottom: 0;
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 3em;
+    }
+
+    header a {
+        color: #000;
+        font-weight: bold;
+    }
+
+    .paquetes ul li a {
+        color: #2e0609;
+    }
+
+    .paquetes h3 {
+        font-size: 1.4em;
+    }
+
+    .paquetes ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        font-size: 1.1em;
+        gap: 15px;
+        padding: 0;
+    }
+
+    @media (width >= 1024px) {
+        .paquetes {
+            padding-left: 40px;
+        }
+    }
+</style>
+
+<style is:global>
+    li {
+        font-weight: bold;
+    }
+
+    section:not(:last-child) {
+        opacity: 0;
+        scale: 0.4;
+        animation: animacionImagen linear forwards;
+        animation-timeline: view();
+        animation-range: entry;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        @keyframes animacionImagen {
+            from {
+                opacity: 0;
+                scale: 0.4;
+            }
+            to {
+                opacity: 1;
+                scale: 1;
+            }
+        }
+    }
+</style>

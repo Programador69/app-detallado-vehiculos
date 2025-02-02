@@ -1,0 +1,108 @@
+<div class="lineas">
+    <div class="carroAnimacion">
+        <i class='bx bxs-car' style="color: #2e0609;" ></i>
+    </div>
+    <span>---</span>
+    <span>---</span>
+    <span>---</span>
+    <span>---</span>
+    <span>---</span>
+    <span>---</span>
+    <span>---</span>
+    <span>---</span>
+    <span>---</span>
+    <span>---</span>
+</div>
+
+<style>
+    .lineas {
+        margin-top: 50px;
+        border-top: 2px solid #000;
+        border-bottom: 2px solid #000;
+        height: 80px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    span {
+        color: #2e0609;
+    }
+
+    .carroAnimacion {
+        animation: moverAuto 3s infinite alternate;
+    }
+
+    
+    .lineas span {
+        animation: moverLineas 3s infinite alternate;
+    }
+    
+    
+    @media (prefers-reduced-motion: no-preference) {
+        @keyframes moverAuto {
+            0% {
+             transform: translateX(0);   
+            }
+            100% {
+                transform: translateX(2300%);
+            }
+        }
+        
+        @keyframes moverLineas {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-500%);
+            }
+        }
+    }
+
+    @media (width >= 768px) {
+        @media (prefers-reduced-motion: no-preference) {
+            @keyframes moverAuto {
+                0% {
+                    transform: translateX(0);   
+                }
+                100% {
+                    transform: translateX(4000%);
+                }
+        }
+        
+    }
+    }
+
+    @media (width >= 1024px) {
+        .carroAnimacion {
+            animation: moverAuto 8s infinite alternate;
+        }
+
+        
+        .lineas span {
+            animation: moverLineas 8s infinite alternate;
+        }
+        
+        @media (prefers-reduced-motion: no-preference) {
+            @keyframes moverAuto {
+                0% {
+                    transform: translateX(0);   
+                }
+                100% {
+                    transform: translateX(7200%);
+                }
+                    medidas para laptop
+            }
+                    
+            @keyframes moverLineas {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(-990%);
+                }
+            }
+        }
+
+    }
+</style>

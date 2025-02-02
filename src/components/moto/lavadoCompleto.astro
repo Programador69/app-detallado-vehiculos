@@ -1,0 +1,102 @@
+---
+import Image from "astro/components/Image.astro";
+import motoLavada from "../../../public/motoLavada.jpg";
+---
+
+<section id="lavadoCompletoMoto">
+    <div class="malla"></div>
+    <h3>Lavado completo</h3>
+
+    <article>
+        <p>
+            Aplicamos un champú especial con desengrasante para poder remover toda la suciedad de la moto, utilizando los materiales adecuados llegamos a los rincones donde no llega un lavado normal. 
+        </p>
+    
+        <h4>Inlcuye:</h4>
+
+        <div>
+            <ul>
+                <li>Limpieza con champú y desengrasante en todos los componentes de la moto</li>
+                <li>Limpieza en las llantas</li>
+            </ul>
+        
+            <Image src={motoLavada} alt="Moto recien lavada con aspecto brillante"/>
+        </div>
+    </article>
+</section>
+
+<style>
+    section {
+        background-image: url("/motoPlaya.jpg");
+    }
+
+    article h4 {
+        align-self: self-start;
+        margin-bottom: 0px;
+    }
+
+    article ul li::marker {
+        color: #e01a29;
+    }
+
+    article div {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    article div ul {
+        padding-left: 20px;
+    }
+
+    article div ul li {
+        line-height: 1.5;
+        font-size: 1.1em;
+        margin: 10px;
+    }
+
+    article div img {
+        width: 300px;
+        height: 300px;
+        border-radius: 15px;
+        box-shadow: 0 0 15px #1e1e1e;
+    }
+
+    @media (width >= 768px) {
+        section {
+            display: block;
+            margin: auto;
+            width: 80%;
+            margin-top: 40px;
+        }
+
+        article div ul {
+            padding: 0 0 0 10px; 
+        }
+
+        article div img {
+            width: 50%;
+        }
+    }
+
+    @media (width >= 1024px) {
+        section {
+            width: 40%; 
+        }
+
+        article div {
+            justify-content: space-between;
+        }
+
+        article div ul {
+            padding-left: 5px;
+            max-width: 30%;  
+        }
+
+        article div img {
+            width: 65%;
+            margin-top: -40px;
+        }
+    }
+</style>

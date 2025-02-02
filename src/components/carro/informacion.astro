@@ -1,0 +1,155 @@
+---
+import Image from "astro/components/Image.astro";
+// import autoInformacion from "../../../public/autoInformacion.jpg";
+import autoInformacion from "../../../public/logo.jpg";
+---
+
+<section class="informacion">
+  <article class="texto">
+    <h2>¿Qúe es?</h2>
+    <p>
+      El car detailing, o detallado automotriz, es un proceso mucho más profundo
+      que un lavado de coche. Es un conjunto de técnicas y productos
+      especializados que buscan restaurar, proteger y mejorar la apariencia
+      tanto del exterior como del interior de tu vehículo.
+    </p>
+
+    <ul>
+      <li>Limpieza profunda: Se eliminan todo tipo de suciedad, manchas y residuos, incluso los más difíciles de alcanzar.</li>
+      <li>Pulido y encerado: Se restauran los acabados de la pintura, eliminando rayones superficiales y oxidación.</li>
+      <li>Protección: Se aplican productos que crean una barrera protectora contra los rayos UV, la lluvia ácida, la contaminación y otros agentes externos.</li>
+      <li>Cuidado del interior: Se limpian a fondo los asientos, alfombras, paneles y demás elementos del interior, utilizando productos específicos para cada material.</li>
+    </ul>
+
+    <details>
+      <summary>Beneficios</summary>
+      <ul>
+        <li>
+          Resalta la belleza original del vehículo: El detallado restaura el
+          brillo y color original de la pintura, eliminando manchas, rayones
+          superficiales y oxidación.
+        </li>
+        <li>
+          Aspecto de vehículo nuevo: Un vehículo detallado luce como recién
+          salido de la fábrica, mejorando su apariencia general.
+        </li>
+        <li>
+          Protección de la pintura: Los selladores y ceras aplicados durante el
+          detallado crean una barrera protectora contra los rayos UV, la
+          contaminación y otros agentes externos que pueden dañar la pintura.
+        </li>
+        <li>
+          Interior impecable: La limpieza profunda del interior, incluyendo
+          asientos, alfombras y paneles, elimina manchas, olores y suciedad,
+          proporcionando un ambiente más agradable y saludable.
+        </li>
+        <li>
+          Aumenta el valor de reventa: Un vehículo bien cuidado y detallado
+          tiene un mayor valor de mercado y se vende más rápido.
+        </li>
+        <li>
+          Protección a largo plazo: El detallado regular ayuda a mantener la
+          pintura en buen estado y retrasa la necesidad de repintarla.
+        </li>
+        <li>
+          Satisfacción personal: Conducir un vehículo que luce y huele a nuevo
+          es una experiencia gratificante.
+        </li>
+        <li>
+          Prevención de daños: La eliminación de contaminantes y la aplicación
+          de protectores ayuda a prevenir daños a largo plazo en la pintura y
+          otros componentes.
+        </li>
+      </ul>
+    </details>
+  </article>
+
+  <article class="imagen">
+    <Image
+      src={autoInformacion}
+      alt="Imagen de auto recien lavado con apariencia a nuevo"
+      loading="lazy"
+    />
+  </article>
+
+  <a href="#precios">Precios a domicilio $$$</a>
+</section>
+
+<style>
+  .informacion {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .texto {
+    margin-top: 20px;
+    margin: 0 10px;
+  }
+
+  .texto details summary {
+    cursor: pointer;
+  }
+
+  .texto ul li::marker {
+    color: #e01a29;
+  }
+
+  .texto ul li {
+    margin: 10px 0;
+  }
+
+  .texto details summary {
+    font-size: 1.3em;
+  }
+
+  .imagen {
+    margin-top: 30px;
+  }
+
+  .imagen img {
+    width: 100%;
+    height: 300px;
+    border-radius: 15px;
+    display: block;
+    margin: auto;
+    /* box-shadow: 0 0 7px #1e3da0; */
+    box-shadow: 0 0 7px #000;
+  }
+
+  a {
+    margin-top: 35px;
+    color: #000;
+    font-weight: bold;
+  }
+
+  @media(width >= 768px) {
+    a {
+      align-self: center;
+    }
+  }
+
+  @media (width >= 1024px) {
+    .texto {
+      margin: 0;
+      width: 45%; 
+    }
+
+    .imagen {
+      margin-top: 50px;
+      width: 55%;
+    } 
+
+    .texto h2,
+    .texto p,
+    .texto ul,
+    .texto details {
+      padding-left: 80px;
+    }
+
+    .imagen img {
+      width: 75%; 
+      height: 400px;
+    }
+  }
+</style>

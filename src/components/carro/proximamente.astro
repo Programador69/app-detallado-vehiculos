@@ -1,0 +1,101 @@
+---
+import Image from "astro/components/Image.astro";
+import lavadoExterior from "../../../public/lavadoExterior.jpg";
+import restauracionFocos from "../../../public/restauracionFaros.jpg";
+import tratamientoCeramico from "../../../public/tratamientoCeramico.webp";
+import pulido from "../../../public/pulido.webp";
+import abrillantado from "../../../public/abrillantado.jpg";
+import tratamientoCeramicoCristales from "../../../public/tratamientoCeramicoCristales.jpg";
+---
+
+<section id="proximamente">
+    <h3>Próximamente</h3>
+
+    <article class="lista">
+        <article>
+            <h4>Lavado exterior</h4>
+            <Image src={lavadoExterior} alt="Imagen del lavado exterior del carro"/>
+            <p>Es un proceso meticuloso y detallado que busca restaurar el brillo original de tu vehículo y proteger su pintura. </p>
+        </article>
+    
+        <article>
+            <h4>Restauracion de focos</h4>
+            <Image src={restauracionFocos} alt="Imagen de restauracion de focos"/>
+            <p>Es un proceso que busca eliminar la capa oxidada y opaca de los faros para recuperar su transparencia original. </p>
+        </article>
+    
+        <article>
+            <h4>Tratamiento ceramico</h4>
+            <Image src={tratamientoCeramico} alt="Imagen de tratameinto ceramicos en carros"/>
+            <p>Consiste en aplicar una capa de material cerámico líquido a la pintura de tu vehículo, creando una barrera protectora de alta resistencia que ofrece numerosos beneficios.</p>
+        </article>
+    
+        <article>
+            <h4>Pulido</h4>
+            <Image src={pulido} alt="Imagen de pulido en carros"/>
+            <p>Es un proceso mecánico que utiliza compuestos abrasivos y máquinas pulidoras para corregir imperfecciones en la pintura. El objetivo principal es devolver a la pintura su brillo original y una apariencia suave al tacto.</p>
+        </article>
+    
+        <article>
+            <h4>Abrillantado</h4>
+            <Image src={abrillantado} alt="Imagen de abrillantado en carro"/>
+            <p>Después de haber corregido las imperfecciones de la pintura y eliminado los arañazos, el abrillantado se enfoca en realzar el brillo natural de la pintura y proporcionar un acabado ultra suave y lustroso.</p>
+        </article>
+    
+        <article>
+            <h4>Tratamiento ceramico en cristales</h4>
+            <Image src={tratamientoCeramicoCristales} alt="Imagen de tratamiento ceramico en cristales"/>
+            <p>Es la aplicación de (SiO2) a los cristales de tu auto, creando una barrera protectora hidrofóbica y oleofóbica. Esto significa que repele tanto el agua como la grasa, haciendo que el cristal sea más fácil de limpiar y manteniendo una mejor visibilidad en todo momento.</p>
+        </article>
+    </article>
+    
+</section>
+
+<style>
+    section {
+        display: block;
+        margin: auto;
+    }
+
+    h3 {
+        font-size: 1.5em;
+        padding-left: 20px;
+    }
+
+    .lista {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .lista article {
+        width: 300px;
+        height: 270px;
+        text-align: center;
+        overflow: hidden;
+        transition: height 1.2s;
+        font-weight: bold;
+    }
+
+    .lista article img {
+        border-radius: 15px;
+        width: 200px;
+        height: 200px;
+    }
+
+    .lista article:hover {
+        height: 450px;
+    }
+
+    @media (width >= 1080px) {
+        h3 {
+            margin-top: 40px;
+        }
+
+        section {
+            width: 70%;
+        }
+    }
+</style>

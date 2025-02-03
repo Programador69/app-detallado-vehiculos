@@ -20,8 +20,8 @@ import transporte from "../../../public/transporte.png";
             <div>
                 <h4>Aproximados</h4>
                 <ul>
-                    <li>$ 100 - $ 300 MXN -> Lavado completo</li>
-                    <li>$ 150 - $ 350 MXN -> Restauración de plásticos / cuero</li>
+                    <!-- <li>$ <span class="promocion">?</span> ? - $ ? MXN -> Lavado completo</li> -->
+                    <li>$ <span class="promocion">100</span> 50 - $ 300 MXN -> Restauración de plásticos / cuero</li>
                 </ul>
             </div>
 
@@ -59,6 +59,26 @@ import transporte from "../../../public/transporte.png";
         position: relative;
         color: #fff;
         font-weight: bold;
+    }
+
+    section::before {
+        content: "¡Ofertas primer mes! ";
+        position: absolute;
+        top: 25px;
+        right: -50px;
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 13px;
+        font-weight: bold;
+        color: #000;
+        background: transparent; 
+        height:0;
+        width:150px;                      
+        z-index: 50;
+        border:25px solid transparent;
+        border-bottom:25px solid #e01a29;
+        line-height:23px;
+        transform: rotate(45deg);
     }
 
     .malla {
@@ -99,6 +119,11 @@ import transporte from "../../../public/transporte.png";
 
     article ul li::marker {
         color: #e01a29;
+    }
+
+    .promocion {
+        opacity: .5;
+        text-decoration: line-through;
     }
 
     .divPadre {

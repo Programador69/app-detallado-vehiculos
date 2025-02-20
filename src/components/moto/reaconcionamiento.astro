@@ -15,7 +15,7 @@ import plasticoRestaurado from "../../../public/restauracionPlastico.webp";
     
         <h4>Inlcuye: <span>Reacondicionamiento de plásticos y/o cuero</span></h4>
 
-        <div>
+        <div class="imagenes">
             <Image src={cueroRestaurado} alt="Cuero recien restaurado con apariencia nueva"/>
             <Image src={plasticoRestaurado} alt="Plastico recien restaurado con apariencia nueva"/>
         </div>
@@ -36,18 +36,20 @@ import plasticoRestaurado from "../../../public/restauracionPlastico.webp";
         color: #bbb;
     }
 
-    article div {
+    .imagenes {
+        width: 100%;
         display: flex;
         gap: 20px;
         overflow-x: auto;
     }
 
-    article div img {
+    .imagenes img {
         width: 200px;
         height: 200px;
         border-radius: 15px;
         box-shadow: 0 0 15px #1e1e1e;
     }
+
 
     @media (width >= 768px) {
         section {

@@ -124,12 +124,13 @@ import Pie from "../../components/pie.astro";
         font-weight: bold;
     }
 
-    section:not(:last-child) {
+    section {
         opacity: 0;
         scale: 0.4;
         animation: animacionImagen linear forwards;
         animation-timeline: view();
         animation-range: entry;
+        overflow-x: hidden;
     }
 
     @media (prefers-reduced-motion: no-preference) {

@@ -40,7 +40,7 @@ import Pie from "../../components/pie.astro";
             <h3>Paquetes que incluimos:</h3>
             <ul>
                 <li><a href="#lavadoCompletoMoto">Lavado completo</a></li>
-                <li><a href="#reacondicionamientoMoto">Reacondicionamiento de plasticos / cuero</a></li>
+                <li><a href="#reacondicionamientoMoto">Reacondicionamiento plasticos / cuero</a></li>
                 <li><a href="#lavadoPersonalizadoMoto">Lavado personalizado</a></li>
             </ul>
         </section>
@@ -133,10 +133,6 @@ import Pie from "../../components/pie.astro";
 </style>
 
 <style is:global>
-    body {
-        overflow-x: hidden;
-    }
-
     li {
         font-weight: bold;
     }
@@ -147,9 +143,10 @@ import Pie from "../../components/pie.astro";
         animation: animacionImagen linear forwards;
         animation-timeline: view();
         animation-range: entry;
+        overflow-x: hidden;
     }
 
-    .paquetesInfo section {
+    .paquetesInfo section  {
         display: block;
         border-radius: 15px;
         box-shadow: 0 0 6px #fff;
@@ -184,7 +181,7 @@ import Pie from "../../components/pie.astro";
         display: flex;
         flex-direction: column;
         align-items: center;
-        backdrop-filter: opacity(20px);
+        backdrop-filter: opacity(20%);
         position: relative;
         z-index: inherit;
     }

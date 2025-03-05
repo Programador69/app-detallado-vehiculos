@@ -145,4 +145,33 @@ import Pie from "../../components/pie.astro";
             }
         }
     }
+
+    @media (width >= 768px) {
+        .servicios{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        section {
+            opacity: 1;
+            scale: 1;
+            animation: none;
+        }
+
+        .servicios section {
+            width: 320px;
+            height: 200px;
+            overflow: hidden;
+            filter: blur(1px);
+            transition: all 1s;
+        }
+
+        .servicios section:hover {
+            filter: grayscale(0);
+            width: 500px;
+            height: auto;
+        }
+    }
 </style>

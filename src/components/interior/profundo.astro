@@ -1,6 +1,7 @@
 ---
 import Image from "astro/components/Image.astro";
-import interiorProfundo from "../../../public/interiorProfundo.avif";
+import interiorProfundoAntes from "../../../public/interiorProfundoAntes.jpeg";
+import interiorProfundoDespues from "../../../public/interiorProfundoDespues.jpeg";
 ---
 
 <section id="interiorProfundo" class="limpiezaInterior">
@@ -28,9 +29,16 @@ import interiorProfundo from "../../../public/interiorProfundo.avif";
         <li>Limpieza y aspirado en asientos (si son de tela)</li>
         <li>Limpieza especial en asientos (si son de cuero)</li>
       </ul>
+    </div>
+    
+    <div class="imagenes">
       <Image
-        src={interiorProfundo}
-        alt="Imagen aspirando el interior del carro"
+        src={interiorProfundoAntes}
+        alt="Imagen antes de la limpieza"
+      />
+      <Image
+        src={interiorProfundoDespues}
+        alt="Imagen despues de la limpieza"
       />
     </div>
   </article>
@@ -38,39 +46,59 @@ import interiorProfundo from "../../../public/interiorProfundo.avif";
 
 <style>
   section {
-    background-image: url("/lavadoInterior.png");
+      background-image: url("/panelPrincipal.jpeg");
   }
 
-  @media (width >= 768px) {
-    article div ul {
-      padding: 0 0 0 10px;
-    }
-
-    article div img {
-      width: 45%;
-    }
+  article span {
+      color: #00a447;
   }
 
-  @media (width >= 1185px) {
-    section {
-      width: 70%;
-    }
+  article div {
+      width: 100%;
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+  }
 
-    article p {
-      padding: 0 50px;
-    }
+  article div img {
+      width: 100%;
+      height: 200px;
+      border-radius: 15px;
+  }
 
-    article div ul {
-      padding-left: 40px;
-    }
+  .imagenes {
+      margin: 15px 0;
+      flex-wrap: nowrap;
+      justify-content: space-around;
+      flex-direction: row;
+  }
 
-    article div {
-      justify-content: space-between;
-    }
+  .imagenes img {
+      width: 200px;
+      height: 200px;
+      border-radius: 15px;
+      object-fit: unset;
+  }
 
-    article div img {
-      width: 50%;
-      margin-top: -40px;
-    }
+  @media (width >= 1080px) {
+      section {
+          width: 70%;
+      }
+
+      article p {
+          padding: 0 50px;
+      }
+
+      article div {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-around;
+          gap: 25px;
+          margin: 20px 0;
+      }
+
+      article div img {
+          width: 230px; 
+      }
   }
 </style>

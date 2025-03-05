@@ -1,6 +1,6 @@
 ---
 import Image from "astro/components/Image.astro";
-import lavadoInterior from "../../../public/lavadoInterior.png";
+import lavadoInterior from "../../../public/interiorBasico.jpeg";
 ---
 
 <section id="interiorBasico" class="limpiezaInterior">
@@ -27,6 +27,7 @@ import lavadoInterior from "../../../public/lavadoInterior.png";
       <Image
         src={lavadoInterior}
         alt="Imagen de limpieza del interior del carro"
+        id="imagenLavadoInterior"
       />
     </div>
   </article>
@@ -34,7 +35,12 @@ import lavadoInterior from "../../../public/lavadoInterior.png";
 
 <style>
   section {
-    background-image: url("/interiorCompleto.png");
+    background-image: url("/panelPrincipal.jpeg");
+  }
+
+  #imagenLavadoInterior {
+    /* width: 80%; */
+    /* object-fit: fill; */
   }
 
   @media (width >= 768px) {
@@ -66,7 +72,7 @@ import lavadoInterior from "../../../public/lavadoInterior.png";
 
     article div img {
       width: 50%;
-      margin-top: -40px;
+      margin: auto;
     }
   }
 </style>

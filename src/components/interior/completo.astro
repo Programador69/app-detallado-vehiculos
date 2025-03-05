@@ -1,6 +1,7 @@
 ---
 import Image from "astro/components/Image.astro";
-import interiorCompleto from "../../../public/interiorCompleto.png";
+import interiorCompletoAntes from "../../../public/interiorCompletoAntes.jpeg";
+import interiorCompletoDespues from "../../../public/interiorCompletoDespues.jpeg";
 ---
 
 <section id="interiorCompleto" class="limpiezaInterior">
@@ -28,23 +29,50 @@ import interiorCompleto from "../../../public/interiorCompleto.png";
                 <li>Restauración de plásticos</li>
                 <li>Restauración de cuero</li>
             </ul>
-            <Image src={interiorCompleto} alt="Imagen limpiando las salidas de aire acondicionado"/>
+        </div>
+        
+        <div class="imagenes">
+            <Image src={interiorCompletoAntes} alt="Imagen antes del servicio"/>
+            <Image src={interiorCompletoDespues} alt="Imagen despues del servicio"/>
         </div>
     </article>
 </section>
 
 <style>
     section {
-        background-image: url("/lavadoInterior.png");
+        background-image: url("/panelPrincipal.jpeg");
     }
 
+    article div {
+      width: 100%;
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+  }
+
+  article div img {
+      width: 100%;
+      height: 200px;
+      border-radius: 15px;
+  }
+
+  .imagenes {
+      margin: 15px 0;
+      flex-wrap: nowrap;
+      justify-content: space-around;
+      flex-direction: row;
+  }
+
+  .imagenes img {
+      width: 200px;
+      height: 200px;
+      border-radius: 15px;
+      object-fit: unset;
+  }
+    
     @media (width >= 768px) {
         article div ul {
             padding: 0 0 0 10px; 
-        }
-
-        article div img {
-            width: 48%;
         }
     }
 
@@ -63,11 +91,6 @@ import interiorCompleto from "../../../public/interiorCompleto.png";
 
         article div {
             justify-content: space-between; 
-        }
-
-        article div img {
-            width: 50%; 
-            margin-top: 40px; 
         }
     }
 </style>

@@ -1,0 +1,98 @@
+---
+import Image from "astro/components/Image.astro";
+import carroScucio from "../../../../public/carroSucio.jpeg";
+import carroLimpio from "../../../../public/carroLimpio.jpeg";
+---
+
+<section id="llantas" class="limpiezaExterior">
+    <div class="malla"></div>
+    <h3>Lavado exterior completo</h3>
+
+    <article>
+        <p>
+            Deja que tu carro brille como nuevo con nuestro lavado exterior completo.
+        </p>
+    
+        <h4>Inlcuye:</h4>
+    <div>
+      <ul>
+        <li>Lavado de llantas y rines</li>
+        <li>Repelencia al agua en las llantas opcional (no-incluido)</li>
+        <li>Prelavado especial para el polvo, barro, arcilla y grasas.</li>
+        <li>Lavado con el metodo 2 cubetas</li>
+        <li>Secado con toalla de microfibra para minimizar al maximo los microrayones</li>
+      </ul>
+    </div>
+    
+    <div class="imagenes">
+      <Image
+        src={carroScucio}
+        alt="Imagen de un faro antes de iniciar el servicio"
+      />
+      <Image
+        src={carroLimpio}
+        alt="Imagen de un faro al acabar el servicio"
+      />
+    </div>
+    
+    </article>
+</section>
+
+<style>
+  section {
+      background-image: url("/panelPrincipal.jpeg");
+  }
+
+  article span {
+      color: #00a447;
+  }
+
+  article div {
+      width: 100%;
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+  }
+
+  article div img {
+      width: 100%;
+      height: 200px;
+      border-radius: 15px;
+  }
+
+  .imagenes {
+      margin: 15px 0;
+      flex-wrap: nowrap;
+      justify-content: space-around;
+      flex-direction: row;
+  }
+
+  .imagenes img {
+      width: 200px;
+      height: 200px;
+      border-radius: 15px;
+      object-fit: unset;
+  }
+
+  @media (width >= 1080px) {
+      section {
+          width: 70%;
+      }
+
+      article p {
+          padding: 0 50px;
+      }
+
+      article div {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-around;
+          gap: 25px;
+          margin: 20px 0;
+      }
+
+      article div img {
+          width: 230px; 
+      }
+  }
+</style>

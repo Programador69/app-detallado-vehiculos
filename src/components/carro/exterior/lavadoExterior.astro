@@ -43,6 +43,26 @@ import carroLimpio from "../../../../public/carroLimpio.jpeg";
       background-image: url("/panelPrincipal.jpeg");
   }
 
+  section::before {
+    content: "$ 340 / $ 470 MXN";
+    position: absolute;
+    top: 25px;
+    right: -50px;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+    color: #000;
+    background: transparent; 
+    height:0;
+    width:150px;                      
+    z-index: 50;
+    border:25px solid transparent;
+    border-bottom:25px solid #e01a29;
+    line-height:23px;
+    transform: rotate(45deg);
+  }
+
   article span {
       color: #00a447;
   }

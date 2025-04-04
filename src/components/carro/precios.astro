@@ -19,18 +19,19 @@ import transporte from "../../../public/transporte.png";
             <div>
                 <h4>Aproximados:</h4>
                 <ul>
-                    <li>$ <span class="promocion">400</span> 250 - $ 600 MXN -> Lavado basico</li>
-                    <li>$ <span class="promocion">550</span> 350 - $ 1,300 MXN -> Lavado profundo</li>
-                    <li>$ <span class="promocion">650</span> 450 - $ 1,500 MXN -> Lavado completo</li>
+                    <li> $ 560 - $ 1,120 MXN -> Lavado interior completo sin asientos y acabados de cuero</li>
+                    <li> $ 730 - $ 1,460 MXN -> Lavado interior completo con asientos y acabados de cuero</li>
+                    <li> $ 150 MXN -> Limpieza de llantas (4)</li>
+                    <li> $ 240 MXN -> Limpieza de llantas y abrillantado con repelencia al agua (4)</li>
                 </ul>
             </div>
 
             <div>
                 <h4>¿Por qué estos precios?</h4>
                 <ul>
-                    <li>Se le cobra la cantidad de producto que se gasta en su vehiculo</li>
+                    <li>Se le cobra la cantidad y calidad de producto que se usa en su vehiculo</li>
                     <li>Se le cobra la mano de obra</li>
-                    <li>Se le cobra el transporte de ida a su ubicación</li>
+                    <li>En algunos casos se le cobra el transporte a su ubicación</li>
                 </ul>
             </div>
         </div>
@@ -49,8 +50,8 @@ import transporte from "../../../public/transporte.png";
         background-image: url("/precios.jpg");
     }
 
-    section::before {
-        content: "¡Ofertas primer mes! ";
+    /* section::before {
+        content: "¡Ofertas! ";
         position: absolute;
         top: 25px;
         right: -50px;
@@ -67,7 +68,7 @@ import transporte from "../../../public/transporte.png";
         border-bottom:25px solid #e01a29;
         line-height:23px;
         transform: rotate(45deg);
-    }
+    } */
 
     .divPadre div {
         display: flex;
@@ -124,7 +125,15 @@ import transporte from "../../../public/transporte.png";
         }
 
         .divPadre div {
+            padding-left: 10px;
+        }
+
+        .divPadre div:first-child {
             width: 50%;
+        }
+
+        .divPadre div:last-child {
+            width: 40%;
         }
 
         .divPadre h4 {

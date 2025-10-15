@@ -1,9 +1,7 @@
 ---
 import Informacion from "../../components/moto/informacion.astro";
 import LavadoCompleto from "../../components/moto/lavadoCompleto.astro";
-import Reaconcionamiento from "../../components/moto/reaconcionamiento.astro";
 import LavadoPersonalizado from "../../components/moto/lavadoPersonalizado.astro";
-import Precios from "../../components/moto/precios.astro";
 import Proximamente from "../../components/moto/proximamente.astro";
 import Pie from "../../components/pie.astro";
 ---
@@ -40,18 +38,14 @@ import Pie from "../../components/pie.astro";
             <h3>Paquetes que incluimos:</h3>
             <ul>
                 <li><a href="#lavadoCompletoMoto">Lavado completo</a></li>
-                <li><a href="#reacondicionamientoMoto">Reacondicionamiento plasticos / cuero</a></li>
                 <li><a href="#lavadoPersonalizadoMoto">Lavado personalizado</a></li>
             </ul>
         </section>
 
         <section class="paquetesInfo">
             <LavadoCompleto/>
-            <Reaconcionamiento/>
             <LavadoPersonalizado/>
         </section>
-
-        <Precios/>
         <Proximamente/>
     </main>
 

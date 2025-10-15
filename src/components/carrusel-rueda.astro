@@ -1,0 +1,463 @@
+---
+import Image from "astro/components/Image.astro";
+import llantasAntes from "../../public/llantaAntes.jpeg";
+import llantasDespues from "../../public/llantaDespues.jpeg";
+import faroRestaurado from "../../public/farosNuevos.jpg";
+import faroSucio from "../../public/faroSucio.jpg";
+import carroScucio from "../../public/carroSucio.jpeg";
+import carroLimpio from "../../public/carroLimpio.jpeg";
+import tapetesAntes from "../../public/interiorCompletoAntes.jpeg";
+import tapetesDespues from "../../public/interiorCompletoDespues.jpeg";
+import proteccionPlasticosExternos from "../../public/proteccionPlasticosExternos.jpeg";
+import proteccionPlasticosExternos2 from "../../public/proteccionPlasticosExternos2.jpeg";
+import asientosAntesDespues from "../../public/asientosAntesDespues.jpeg";
+import asientosAntesDespues2 from "../../public/asientosAntesDespues2.jpeg";
+import consolaAntesDespues from "../../public/consolaAntesDespues.jpeg";
+import cueroAntesDespues from "../../public/cueroAntesDespues.jpeg";
+import puertaConProteccion from "../../public/puertaConProteccion.jpeg";
+import pedalesAntesDespues from "../../public/pedalesLimpios.jpeg";
+import puertaLimpia from "../../public/puertaLimpia.jpeg";
+import techoSucio from "../../public/techoSucio.jpeg";
+import techoLimpio from "../../public/techoLimpio.jpeg";
+import consolaAntesDespues2 from "../../public/consolaAntesDespues2.jpeg";
+import cajuelaSucia from "../../public/cajuelaSucia.jpeg";
+import cajuelaLimpia from "../../public/cajuelaLimpia.jpeg";
+
+const slides = [
+  { id: 1, title: "Limpieza de llantas y rines (4)", precio: "300 MXN", description: "Limpiamos las llantas y los rines de suciedad incrustada, grasa, polvo y otros residuos. Después aplicamos un protector de rayos UV y abrillantador a las llantas que le da hidrorepelencia al agua. Esto le da muchos benficios cuando el suelo esta mojado como mejor tracción, evita la perdida de control, mejor frenado y menor desgaste de las llantas", img1: llantasAntes, img2: llantasDespues, imgFondo: "/panelPrincipal.jpeg" },
+  { id: 2, title: "Restauración de faros", precio: "Preguntar",description: "¿Faros amarillos? No te preocupes, contactanos y ayudaremos a restaurarlos para que tengas una mejor iluminacion y apariencia. La duracion del producto hace que tus faros queden como nuevos hasta por 1 año y ademas le añade algo de hidrorepelencia. Beneficiate con una mejor iliminación y evita los accidentes por falta de visibilidad.", img1: faroSucio, img2: faroRestaurado, imgFondo: "/panelPrincipal.jpeg" },
+  { id: 3, title: "Lavado exterior", precio: "250 MXN",description: "Permiteme que deje tu carro brillante como si estuviera nuevo con nuestro lavado exterior completo. Empezamos con un pre-lavado, luego pasamos con el metodo de 2 cubetas, detallamos los lugares donde la suciedad es complicada de quitar, aplicamos protecciones en los plasticos exteriores, usamos limpiador especial para cristales y siempre haciendo uso de microfibras para el secado.", img1: carroScucio, img2: carroLimpio,imgFondo: "/panelPrincipal.jpeg" },
+  { id: 4, title: "Restauración de plasticos exteriores", precio: "80 MXN" ,description: "¿Tus plasticos exteriores ya se ven grises en lugar de negros como estaban originalmente?. Deja que vuelvan a brillar y dales el reaconcionamiento que necesitan; con nuestros productos primero realizamos la limpia correspondiente y depsues aplicamos un protector y renovador que les da protección contra los rayos UV del sol hasta por 3 meses.", img1: proteccionPlasticosExternos, img2: proteccionPlasticosExternos2, imgFondo: "/panelPrincipal.jpeg" },
+  { id: 5, title: "Lavado de alfombras y tapetes", precio: "300 MXN" ,description: "Lavamos los 4 tapetes de tu carro (delanteros y traseros); utilizamos un desengrsante y un APC con capacidad de eliminar hongos y bacterias haciendo de tu carro un lugar menos contaminado, ayuda a prevenir alergias, enfermedades y tu carro va a lucir limpio y sin malos olores. Aspiramos la superficie antes del lavado para quitar la mayor cantidad de polvo que pueda tener.", img1: tapetesAntes, img2: tapetesDespues,imgFondo: "/panelPrincipal.jpeg" },
+  { id: 6, title: "Lavado de asientos (5)", precio: "500 MXN", description: "Aspiramos primero para quitar la mayor cantidad de polvo y residuos posible; posteriormente aplicamos el APC para eliminar hongos y bacterias para despues pasar la aspiradora quitamanchas y dejar un acabado impecable. Entre sus beneficios esta la prevencion de alergias y enfermedades, asi como quitar el mal olor y dejar el asiento limpio y en algunos casos libre de todas las manchas.", img1: asientosAntesDespues, img2: asientosAntesDespues2,imgFondo: "/panelPrincipal.jpeg" },
+  { id: 7, title: "Lavado de techo", precio: "150 MXN", description: "¡Todo lo que sube cae!. La suciedad del techo igual se desprende poco a poco y termina ensuciando el interior que ya habias limpiado como los asientos y el piso. Nosotros aplicamos el APC que ademas de limpiar la suciedad, elimina hongos y bacterias para que puedas prevenir alergias y enfermedades. Puede quitar en ocaciones todas las manchas del techo.", img1: techoSucio, img2: techoLimpio, imgFondo: "/panelPrincipal.jpeg" },
+  { id: 8, title: "Lavado de puertas interiores (4)", precio: "400 MXN", description: "Polvo, basura, sudor y manchas son algunas de las principales suciedades que puedes encontrar en las puertas de los carros; nosotros te la dejamos limpia y opcionalmente te aplicamos la protección de plasticos interiores que los protegera contra los rayos UV, les devolvera el color negro que tenian antes y tiene una duracion de hasta 6 meses.", img1: puertaConProteccion, img2: puertaLimpia, imgFondo: "/panelPrincipal.jpeg" },
+  { id: 9, title: "Lavado de la cabina frontal", precio: "250 MXN", description: "Dentro de la cabina frontal nos referimos al tablero de enfrente, al volante y a la consola central. Los rayos UV del sol y la suciedad terminan haciendo que se decoloren y se vean mas viejos de lo que en realidad estan. Eliminamos suciedad, hongos y bacterias y si usted quiere aplicamos la protección de los plasticos negros para protegerlos de los rayos UV hasta por 6 meses.", img1: consolaAntesDespues, img2: cueroAntesDespues, imgFondo: "/panelPrincipal.jpeg" },
+  { id: 10, title: "Lavado de cajuela", precio: "200 MXN", description: "¿Algún trabajo o viaje dejo macnhada y sucia su cajuela?. No se preocupe, nosotros la limpiamos por todos lados, piso, laterales y techo. Aplicamos el APC para eliminar suciedad, hongos y bacterias; ademas de aspirar previamente el area para quitar la mayor cantidad de polvo posible. Protección de plasticos contra rayos UV hasta 6 meses.", img1: cajuelaSucia, img2: cajuelaLimpia, imgFondo: "/panelPrincipal.jpeg" },
+  { id: 11, title: "Lavado personalizado", precio: "Preguntar", description: "¿No hay un paqute que se adapte a lo que su vehiculo necesita?. No hay problema, puede contactarnos y decirnos que ocupa y personalizaremos el precio adecuado para usted. Una mancha en el asiento y una en el techo, una restauración de plastico externo solo en una parte, limpieza de 1 solo tapete, limpieza de pedales, etc. Estaremos encantados de ayudarle y atenderle.", img1: pedalesAntesDespues, img2: consolaAntesDespues2, imgFondo: "/panelPrincipal.jpeg" },
+];
+---
+
+<div class="carousel-container">
+  <div class="carousel-viewport">
+    <div class="carousel-track" id="carousel-track">
+      {slides.map((slide, index) => (
+        <div 
+          class={`carousel-slide`}
+          data-index={index}
+          style={`background-image: linear-gradient(#000, #0005), url(${slide.imgFondo}); background-size: cover; background-position: center`}
+        >
+            <span class="precio">{slide.precio}</span>
+          <div class="slide-content">
+            <h2 class="slide-title">{slide.title}</h2>
+            <p class="slide-description">{slide.description}</p>
+
+            <div class="imagenes">
+                <Image
+                    src={slide.img1}
+                    alt="Imagen antes de iniciar el servicio"
+                />
+                <Image
+                    src={slide.img2}
+                    alt="Imagen al terminar el servicio"
+                />
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+  
+  <button class="carousel-btn carousel-btn-prev" id="prev-btn" aria-label="Anterior">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="15 18 9 12 15 6"></polyline>
+    </svg>
+  </button>
+  
+  <button class="carousel-btn carousel-btn-next" id="next-btn" aria-label="Siguiente">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </button>
+
+  <div class="carousel-indicators" id="indicators"></div>
+  </div>
+
+<style>
+    .imagenes {
+    margin: 15px 0;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    flex-direction: row;
+  }
+
+  .imagenes img {
+    width: 170px;
+    height: 170px;
+    border-radius: 15px;
+    object-fit: unset;
+  }
+
+  .carousel-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    margin-top: 50px;
+  }
+
+  .precio {
+        /* content: "¡Proximamente! "; */
+        position: absolute;
+        top: 25px;
+        right: -50px;
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 13px;
+        font-weight: bold;
+        color: #000;
+        background: transparent; 
+        height:0;
+        width:150px;                      
+        z-index: 50;
+        border:25px solid transparent;
+        border-bottom:25px solid #e01a29;
+        line-height:23px;
+        transform: rotate(45deg);
+    }
+
+  .slide-title {
+    color: #00a447;
+  }
+
+  .slide-content {
+    width: 100%;
+    height: 100%;
+  }
+
+  .carousel-viewport {
+    height: 500px;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    position: relative;
+    touch-action: pan-y pinch-zoom;
+  }
+
+  .carousel-track {
+    height: 100%;
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+  }
+
+  .carousel-slide {
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: relative;
+    user-select: none;
+    text-wrap: balance;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  .slide-icon {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .slide-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin: 0 0 1rem 0;
+    font-weight: bold;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .slide-description {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    margin: auto;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0.95;
+    width: 90%;
+  }
+
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #fff7;
+    border: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    z-index: 10;
+    color: #1e293b;
+  }
+
+  .carousel-btn:hover {
+    background: #f1f5f9;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-50%) scale(1.1);
+  }
+
+  .carousel-btn:active {
+    transform: translateY(-50%) scale(0.95);
+  }
+
+  .carousel-btn-prev {
+    left: 1rem;
+  }
+
+  .carousel-btn-next {
+    right: 1rem;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  /* Tablets */
+  @media (max-width: 768px) {
+    .carousel-slide {
+      height: 350px;
+      padding: 1.5rem;
+    }
+
+    .slide-icon {
+      font-size: 4rem;
+    }
+
+    .carousel-btn {
+      width: 40px;
+      height: 40px;
+    }
+
+    .carousel-btn-prev {
+      left: 0.5rem;
+    }
+
+    .carousel-btn-next {
+      right: 0.5rem;
+    }
+  }
+
+  /* Móviles */
+  @media (max-width: 480px) {
+    .carousel-container {
+      padding: 0;
+    }
+
+    .carousel-slide {
+      height: 500px;
+      padding: 0;
+    }
+
+    .slide-icon {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .carousel-btn {
+      width: 36px;
+      height: 36px;
+      opacity: 0.9;
+    }
+
+    .carousel-btn svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  /* Pantallas muy pequeñas */
+  @media (max-width: 360px) {
+    .carousel-slide {
+      height: 280px;
+    }
+  }
+
+  @media screen and (min-width: 425px) {
+    .imagenes {
+        display: flex;
+        gap: 20px;
+        margin-top: 30px;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .imagenes img {
+        width: 200px;
+        height: 200px;
+    }
+  } 
+
+  @media screen and (min-width: 1024px) {
+    .imagenes img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .carousel-viewport {
+        height: 600px;
+    }
+}
+</style>
+
+<script define:vars={{ slides }}>
+  let currentIndex = 0;
+  const totalSlides = slides.length;
+  
+  const track = document.getElementById('carousel-track');
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
+  const indicatorsContainer = document.getElementById('indicators');
+
+  // Variables para swipe
+  let touchStartX = 0;
+  let touchEndX = 0;
+  let isDragging = false;
+
+  // Crear indicadores
+  slides.forEach((_, index) => {
+    const indicator = document.createElement('div');
+    indicator.className = `indicator ${index === 0 ? 'active' : ''}`;
+    indicator.addEventListener('click', () => goToSlide(index));
+    indicatorsContainer.appendChild(indicator);
+  });
+
+  function updateCarousel() {
+    const offset = -currentIndex * 100;
+    track.style.transform = `translateX(${offset}%)`;
+
+    // Actualizar indicadores
+    document.querySelectorAll('.indicator').forEach((ind, idx) => {
+      ind.classList.toggle('active', idx === currentIndex);
+    });
+  }
+
+  function goToSlide(index) {
+    if (index < 0) {
+      currentIndex = 0;
+    } else if (index >= totalSlides) {
+      currentIndex = totalSlides - 1;
+    } else {
+      currentIndex = index;
+    }
+    updateCarousel();
+  }
+
+  function nextSlide() {
+    goToSlide(currentIndex + 1);
+  }
+
+  function prevSlide() {
+    goToSlide(currentIndex - 1);
+  }
+
+  // Touch events
+  track.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX;
+    isDragging = true;
+  }, { passive: true });
+
+  track.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+    touchEndX = e.touches[0].clientX;
+  }, { passive: true });
+
+  track.addEventListener('touchend', () => {
+    if (!isDragging) return;
+    
+    const diff = touchStartX - touchEndX;
+    const threshold = 50;
+
+    if (Math.abs(diff) > threshold) {
+      if (diff > 0) {
+        nextSlide();
+      } else {
+        prevSlide();
+      }
+    }
+
+    isDragging = false;
+  });
+
+  // Mouse events para desktop
+  let mouseStartX = 0;
+  let isMouseDragging = false;
+
+  track.addEventListener('mousedown', (e) => {
+    mouseStartX = e.clientX;
+    isMouseDragging = true;
+    track.style.cursor = 'grabbing';
+  });
+
+  track.addEventListener('mousemove', (e) => {
+    if (!isMouseDragging) return;
+    e.preventDefault();
+  });
+
+  track.addEventListener('mouseup', (e) => {
+    if (!isMouseDragging) return;
+    
+    const diff = mouseStartX - e.clientX;
+    const threshold = 50;
+
+    if (Math.abs(diff) > threshold) {
+      if (diff > 0) {
+        nextSlide();
+      } else {
+        prevSlide();
+      }
+    }
+
+    isMouseDragging = false;
+    track.style.cursor = 'grab';
+  });
+
+  track.addEventListener('mouseleave', () => {
+    isMouseDragging = false;
+    track.style.cursor = 'grab';
+  });
+
+  track.style.cursor = 'grab';
+
+  // Botones
+  prevBtn.addEventListener('click', prevSlide);
+  nextBtn.addEventListener('click', nextSlide);
+
+  // Teclado
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') {
+      prevSlide();
+    } else if (e.key === 'ArrowRight') {
+      nextSlide();
+    }
+  });
+
+  // Auto-ajuste en resize
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      updateCarousel();
+    }, 150);
+  });
+
+  // Inicializar
+  updateCarousel();
+</script>

@@ -1,8 +1,9 @@
 ---
 import Informacion from "../../components/carro/informacion.astro";
 import Autopista from "../../components/autopista.astro";
-import Servicios from "../../components/servicios.astro";
 import Pie from "../../components/pie.astro";
+import CarruselRueda from "../../components/carrusel-rueda.astro";
+import Proximamente from "../../components/carro/proximamente.astro";
 ---
 
 <!DOCTYPE html>
@@ -32,18 +33,11 @@ import Pie from "../../components/pie.astro";
 
     <main>
         <Informacion/>
-        <section class="paquetes">
-            <h3>Paquetes que incluimos:</h3>
-            <ul>
-                <li><a href="#interiorBasico">Lavado interior basico</a></li>
-                <li><a href="#interiorProfundo">Lavado interior profundo</a></li>
-                <li><a href="#interiorCompleto">Lavado interior completo</a></li>
-                <li> <a href="#interiorPersonalizado">Lavado interior personalizado</a> </li>
-            </ul>
-        </section>
 
         <Autopista/>
-        <Servicios/>
+        <CarruselRueda/>
+        <Proximamente/>
+        <!-- <Servicios/> -->
         <Pie/>
     </main>
 </body>

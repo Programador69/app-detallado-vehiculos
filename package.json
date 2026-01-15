@@ -10,8 +10,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/vercel": "^8.0.4",
-    "astro": "^5.16.5",
+    "@astrojs/vercel": "^2.4.0",
+    "astro": "^5.16.9",
     "esbuild": "^0.25.12"
   }
 }
